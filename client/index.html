@@ -41,10 +41,10 @@
 			<div class="col-sm-4 col-sm-offset-4">
 
 				<div class="checkbox"  ng-repeat="todo in todos">
-                                  <label>
-                                  <input type="checkbox"> {{ todo.text }}
-                                  </label>
-                                 </div>
+                 		
+                    	<input type="checkbox" ng-model="todo.done" ng-change="toggleCompleted(todo)"> {{ todo.text }}
+                    	<button class="destroy" ng-click="clearTodo()" ng-show = "todo.done">Delete</button>
+             	</div>
                              
 				<p class="text-center" ng-show="loading">
 					<span class="fa fa-spinner fa-spin fa-3x"></span>
